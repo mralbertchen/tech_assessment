@@ -24,7 +24,6 @@ app.get("/", (req, res) => {
 });
 
 app.get("/:userId", async (req, res) => {
-  debugger;
   const userId = Number(req.params.userId) < 4 ? Number(req.params.userId) : 1;
   loadPortfolio(userId)
   .then(portfolio => res.render('main', { portfolio }));
